@@ -1,8 +1,7 @@
 const mqtt = require("mqtt");
 const ping = require("ping");
 const fs = require('fs');
-const sys = require('sys');
-    exec = require('child_process').exec;
+
 var Service, Characteristic, VolumeCharacteristic;
 
 
@@ -60,7 +59,6 @@ function television(log, config) {
   this.HdmiName4 = config.input["HdmiName4"];
   this.on_off = config.remote["on_off"];
   this.powerModeSelection = config.remote["powerModeSelection"];
-  this.txt = config["txt"];
   
   const inputMap = {
   1: config.input["home_screen"],
@@ -78,8 +76,7 @@ function television(log, config) {
   8: config.remote["select"],
   11: config.remote["play_pause"],
   9: config.remote["back"],
-  //10: '3,32A6D02F,32', // TODO....
-  15: config.remote["information"]// TODO...
+  15: config.remote["information"]
   };
 
   const volumeMap = {
@@ -115,11 +112,7 @@ function television(log, config) {
             .then(function (res, err) {
             this.power = res.alive ? 1 : 0;
             console.log("power", this.power);
-            power.updateValue(this.power);
-            if (this.power == 0) {
-               var txt = "echo '1' > " + this.txt;
-               exec(txt); 
-            };             
+            power.updateValue(this.power);            
         });    
   }, 10000);
   };
@@ -130,20 +123,9 @@ function television(log, config) {
     .getCharacteristic(Characteristic.ActiveIdentifier);
   activeIdentifier
       .on('set', (value, callback) => {
-        console.log("value", value);
-        var txt =  "echo " + value + " > " + this.txt;
-        exec(txt);
         var valueStr = inputMap[value].toString();
         this.mqttClient.publish(this.mqttTopic['abc'], valueStr);
         callback(null);
-    })
-    .on('get', function(callback) {
-        var command = "cat " + this.txt";
-        var stdout = "none";  
-           exec(command, function (error, stdout, stderr) {
-           var Value=stdout.trim().toLowerCase();
-           callback(null, Value);
-        });
     });
   
   this.mqttClient.on('message', (topic, message) => {
@@ -153,38 +135,25 @@ function television(log, config) {
           if (stat === config.input["home_screen"]) {
               this.mode = 1;
               activeIdentifier.updateValue(1);
-              var txt = "echo '1' > " + this.txt;
-              console.log(txt);
-              exec(txt);
           } else if (stat === config.input["HdmiName1"]) {
               if (this.HdmiName1) {
               this.mode = 2;
               activeIdentifier.updateValue(2);
-              var txt = "echo '2' > " + this.txt;
-               exec(txt);
               }
           } else if (stat === config.input["HdmiName2"]) {
               if (this.HdmiName2) {
               this.mode = 3;
               activeIdentifier.updateValue(3);
-              var txt = "echo '3' > " + this.txt;
-              console.log(txt);
-              exec(txt);
               }
           } else if (stat === config.input["HdmiName3"]) {
               if (this.HdmiName3) {
               this.mode = 4;
               activeIdentifier.updateValue(4);
-              var txt = "echo '4' > " + this.txt;
-              console.log(txt);
-              exec(txt);
               }
           } else if (stat === config.input["HdmiName4"]) {
               if (this.HdmiName4) {
               this.mode = 5;
               activeIdentifier.updateValue(5);
-              var txt = "echo '4' > " + this.txt;
-              exec(txt);
               }
           } else if (stat === config.remote["on_off"]) {
               if (!this.host) {
