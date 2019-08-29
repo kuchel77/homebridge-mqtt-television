@@ -1,12 +1,13 @@
 # homebridge-mqtt-television
-
-# Capture remote control code
+## Note: 
+ If you find bugs, please submit them to issues or QQ Group: 107927710.
+## Capture remote control code
 You can control the remote control and view the captured remote control code in the web interface.
 ![](https://github.com/hassbian-ABC/homebridge-mqtt-television/blob/master/images/test.png)
 
-Required:    
+## Required:    
    input: home_screen   
-Optional:   
+## Optional:   
    input: hdmi1, hdmi2, hdmi3, hdmi4   
    pinghost   
     
