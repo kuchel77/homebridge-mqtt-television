@@ -18,31 +18,31 @@
             },
             "input": {
                 "screenName": "主页",
-                "home_screen": "xxxxxx抓码",
+                "home_screen": "3,32A66897,32",
                 "HdmiName1": "Hdmi 1",
-                "hdmi1": "xxxxxx抓码",
+                "hdmi1": "3,32A66897,32",
                 "HdmiName2": "Hdmi 2",
-                "hdmi2": "xxxxxx抓码",
+                "hdmi2": "3,32A66897,32",
                 "HdmiName3": "Hdmi 3",
-                "hdmi3": "xxxxxx抓码",
+                "hdmi3": "3,32A66897,32",
                 "HdmiName4": "Hdmi 4",
-                "hdmi4": "xxxxxx抓码"
+                "hdmi4": "3,32A66897,32"
             },
             "remote": {
-                "on_off": "xxxxxx抓码",
-                "pictureMode": "xxxxxx抓码",
-                "arrow_up": "xxxxxx抓码",
-                "arrow_right": "xxxxxx抓码",
-                "arrow_down": "xxxxxx抓码",
-                "arrow_left": "xxxxxx抓码",
-                "select": "xxxxxx抓码",
-                "play_pause": "xxxxxx抓码",
-                "back": "xxxxxx抓码",
-                "information": "xxxxxx抓码"
+                "on_off": "3,32A66897,32",
+                "arrow_up": "3,32A66897,32",
+                "arrow_right": "3,32A66897,32",
+                "arrow_down": "3,32A66897,32",
+                "arrow_left": "3,32A66897,32",
+                "select": "3,32A66897,32",
+                "play_pause": "3,32A66897,32",
+                "back": "3,32A66897,32",
+                "information": "3,32A66897,32",
+                "powerModeSelection": "3,32A66897,32"
             },
             "volume": {
-                "increment": "xxxxxx抓码",
-                "decrement": "xxxxxx抓码"
+                "increment": "3,32A66897,32",
+                "decrement": "3,32A66897,32"
             }
         }
     ]

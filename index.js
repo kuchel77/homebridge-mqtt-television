@@ -59,7 +59,7 @@ function television(log, config) {
   this.HdmiName3 = config.input["HdmiName3"];
   this.HdmiName4 = config.input["HdmiName4"];
   this.on_off = config.remote["on_off"];
-  this.pictureMode = config.remote["pictureMode"];
+  this.powerModeSelection = config.remote["powerModeSelection"];
   
   const inputMap = {
   1: config.input["home_screen"],
@@ -186,12 +186,12 @@ function television(log, config) {
       } 
   });
   
-  var pictureMode = this.tvService
+  var powerModeSelection = this.tvService
       .getCharacteristic(Characteristic.PowerModeSelection);
       
-  pictureMode
+  powerModeSelection
     .on('set', (value, callback) => {
-        var valueStr = this.pictureMode.toString();
+        var valueStr = this.powerModeSelection.toString();
         this.mqttClient.publish(this.mqttTopic['abc'], valueStr);
         callback(null);
     });
