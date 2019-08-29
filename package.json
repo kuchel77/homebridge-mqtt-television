@@ -1,0 +1,26 @@
+{
+  "name": "homebridge-mqtt-television",
+  "version": "0.0.3",
+  "description": "mqtttv homebridge(https://github.com/nfarina/homebridge) plugin.",
+  "keywords": [
+    "homebridge-plugin",
+    "mqtt"
+  ],
+  "homepage": "https://github.com/hassbian-ABC/homebridge-mqtt-television",
+  "author": "hang.yin",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/hassbian-ABC/homebridge-mqtt-television"
+  },
+  "bugs": {
+    "url": "http://github.com/hassbian-ABC/homebridge-mqtt-television/issues"
+  },
+  "dependencies": {
+    "mqtt": "^1.6.3",
+    "ping": "^0.2.0" 
+  },
+  "engines": {
+    "node": ">=7.0.0",
+    "homebridge": ">=0.4.1"
+  }
+}

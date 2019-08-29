@@ -1,0 +1,49 @@
+{
+    "bridge": {
+        "name": "mqttTV",
+        "username": "B1:07:FA:91:FA:7E",
+        "port": 52010,
+        "pin": "123-11-678"
+    },
+    "accessories": [
+        {
+            "accessory": "television",
+            "name": "乐视电视",
+            "pinghost": "10.0.0.45",
+            "mqtt": {
+               "server": "10.0.0.50:1883",
+               "prefix": "homebridge",
+               "username": "pi",
+               "password": "raspberry"
+            },
+            "input": {
+                "screenName": "主页",
+                "home_screen": "xxxxxx抓码",
+                "HdmiName1": "Hdmi 1",
+                "hdmi1": "xxxxxx抓码",
+                "HdmiName2": "Hdmi 2",
+                "hdmi2": "xxxxxx抓码",
+                "HdmiName3": "Hdmi 3",
+                "hdmi3": "xxxxxx抓码",
+                "HdmiName4": "Hdmi 4",
+                "hdmi4": "xxxxxx抓码"
+            },
+            "remote": {
+                "on_off": "xxxxxx抓码",
+                "pictureMode": "xxxxxx抓码",
+                "arrow_up": "xxxxxx抓码",
+                "arrow_right": "xxxxxx抓码",
+                "arrow_down": "xxxxxx抓码",
+                "arrow_left": "xxxxxx抓码",
+                "select": "xxxxxx抓码",
+                "play_pause": "xxxxxx抓码",
+                "back": "xxxxxx抓码",
+                "information": "xxxxxx抓码"
+            },
+            "volume": {
+                "increment": "xxxxxx抓码",
+                "decrement": "xxxxxx抓码"
+            }
+        }
+    ]
+}
