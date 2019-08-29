@@ -5,10 +5,10 @@ You can control the remote control and view the captured remote control code in 
 ![](https://github.com/hassbian-ABC/homebridge-mqtt-television/blob/master/images/test.png)
 
 Required:    
-    input: home_screen   
+   input: home_screen   
 Optional:   
-    input: hdmi1, hdmi2, hdmi3, hdmi4   
-    pinghost   
+   input: hdmi1, hdmi2, hdmi3, hdmi4   
+   pinghost   
     
 
 ```
